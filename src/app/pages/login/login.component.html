@@ -1,3 +1,41 @@
-<div class="main-container">
+<div class="main-container login" [class.alternative]="whiteTheme">
+  <div *ngIf="recover === false; else recoverBlock" class="form animated fadeIn">
+    <img src="../../../assets/img/FPDLAILNYAPASDEFONDOK.png" class="logo" 
+     [ngClass]="{'animated': hover, 'pulse': hover}" (mouseenter)= 'triggerAnim()' (mouseleave)='triggerAnim()'/>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Username</mat-label>
+        <input matInput class="mylabel" formControlName="username">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Password</mat-label>
+        <input matInput class="mylabel" type='password' formControlName="password">
+      </mat-form-field>
+    </form>
+    <div>
+      <mat-checkbox color="primary" [(ngModel)]="remember">
+        <label class="mylabel">Remember me</label>
+      </mat-checkbox>
+      <a class="mylabel forgetlink" (click)="handleRecover()">forget info ?</a>
+    </div>
+    <button class="loginButton" mat-stroked-button color="primary" (click)="login()">Login</button>
+  </div>
 
+  <ng-template #recoverBlock>
+    <div class="form animated fadeIn">
+      <p class="mylabel question">Forgot your account's password?</p>
+      <form [formGroup]="recoverForm">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Email</mat-label>
+          <input matInput class="mylabel" formControlName="email">
+        </mat-form-field>
+       
+      </form>
+      <div>
+          <a class="mylabel returnlink" (click)="handleRecover()"> Return to login</a>
+        </div>
+        <button class="recoverButton" mat-stroked-button color="primary" (click)="sendRecoverMessage()">Send password reset</button>
+    </div>
+    
+  </ng-template>
 </div>
