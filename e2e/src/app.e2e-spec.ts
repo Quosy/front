@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should contain a router outlet', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to Quosy-front!');
+    expect(page.getRouterOutlet()).toBeDefined();
   });
 });

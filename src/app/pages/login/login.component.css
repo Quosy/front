@@ -1,65 +1,112 @@
-.login{
-    background: #009688; /**Backup colour in case the browser hates gradients**/
+.login {
+    background: #009688;
     background: linear-gradient(#009688, #1976D2);
     overflow: hidden;
 }
 
-.form{
-    position: absolute;
-    left:0;
-	right:0;
-	top:0;
-	bottom:0;
-	margin:auto;
-    border: 1px solid #FFFFFF ;
-    border-radius: 4px;
-    background: transparent;
-    margin: auto;
-    width: 260px;
-    height: 400px;
-    display: grid;
-    padding: 15px;
+@media screen and (max-width: 640px) {
+    .form {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: 1px solid #EEEEEE;
+        border-radius: 4px;
+        background: transparent;
+        margin: auto;
+        width: 260px;
+        height: 400px;
+        display: grid;
+        padding: 15px;
+    }
+    .divider{
+        display: none;
+    }
+    .logo {
+        height: 150px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .form {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: transparent;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 0.1fr 1fr;
+        padding: 15px;
+       
+    }
+    .logo {
+        height: 300px;
+        margin: auto;
+        margin-right :0px;
+    }
+    .formContainer{
+        display: grid;
+        width: 50%;
+        min-width: 240px;
+        height: 400px;
+        margin: auto;
+        margin-top: 50vh;
+        margin-left: 80px; /* poussé de la moitié de hauteur de viewport */
+        transform: translateY(-40%);
+    }
+    .divider{
+        border-right:solid  1px #EEEEEE;
+        margin-top: 50vh;
+        transform: translateY(-45%);
+    }
+  
 }
 
 .mylabel {
-    color:#FFFFFF !important;
+    color: #EEEEEE !important;
     text-align: center;
-   }
+}
 
-.forgetlink{
+.link {
     float: right;
     cursor: pointer;
-}
-.returnlink{
-    float: right;
-    cursor: pointer;
-    margin-bottom: 25x;
-}
-.title{
-    font-size: 40px;
-    margin-top :20px;
-    margin-bottom: 10px;
-}
-.question{
-    font-size: 30px;
-    margin-top :20px;
-    margin-bottom: 10px;
-}
-.loginButton{
     margin-bottom: 10px;
 }
 
-.recoverButton{
-    position: absolute;
-    bottom: 20px;
-    height: 53px;
-    width: 260px;
-    margin-left: 15px;
+.returnlink {
+    float: right;
+    cursor: pointer;
 }
+
 .input {
-    width: 100%
+    width: 100%;
 }
-.logo{
-    height: 100px;
-    margin: auto;
+.question {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.button{
+    width: 100%;
+    height: 60px;
+}
+
+::ng-deep .mat-checkbox-background {
+    background-color: transparent !important;
+}
+
+::ng-deep .mat-checkbox-checkmark {
+    fill: #EEEEEE !important;
+}
+
+::ng-deep .alternative .mat-checkbox-checkmark-path {
+    stroke: #EEEEEE !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 15px;
 }

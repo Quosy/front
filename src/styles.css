@@ -1,11 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-body{
+body {
     font-family: 'Marck Script', cursive !important;
 }
-.main-container{
+
+.main-container {
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     right: 0;
     left: 0;
