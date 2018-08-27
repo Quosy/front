@@ -59,7 +59,7 @@ describe('Login Component', () => {
     page.getLoginButton().click();
     page.setLocal();
   });
-  it('should have inputs already filed with local storage values',  () => {
+  it('should have inputs already filed with local storage values', () => {
     page.navigateTo();
     expect(page.getPasswordInput().getAttribute('value')).toBe('GI');
     expect(page.getUserNameInput().getAttribute('value')).toBe('joe');
