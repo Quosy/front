@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,8 +15,9 @@ export class LoginComponent implements OnInit {
   public remember: boolean;
   public recover: boolean;
   public hover: boolean;
+  
 
-  constructor(private router: Router, private fb: FormBuilder) {
+  constructor( private router: Router, private fb: FormBuilder, private loginS: LoginService ) {
     this.recover = false;
     this.hover = false;
     this.loginForm = this.fb.group({
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
 
   handleRemember() {
     if (this.remember) {
+      localStorage.clear();
       localStorage.setItem('username', this.loginForm.controls.username.value);
       localStorage.setItem('password', this.loginForm.controls.password.value);
     } else {
@@ -58,12 +61,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // TODO service login
     if (this.loginForm.valid) {
-      this.handleRemember();
-      this.router.navigateByUrl('/quosy');
+      this.loginS.login(this.loginForm.value).subscribe( res => {
+        console.log(res);
+        this.handleRemember();
+        this.router.navigateByUrl('/quosy');
+      });
     }
   }
+
   sendRecoverMessage() {
     // TODO send service
     if (this.recoverForm.valid) {
@@ -80,6 +86,7 @@ export class LoginComponent implements OnInit {
       this.recoverForm.controls.email.hasError('email') ? 'Not a valid email' :
         '';
   }
+
   getErrorMessageLoginUsername() {
     return this.loginForm.controls.username.hasError('required') ? 'This field is required' : '';
   }
@@ -87,4 +94,5 @@ export class LoginComponent implements OnInit {
   getErrorMessageLoginPassword() {
     return this.loginForm.controls.password.hasError('required') ? 'This field is required' : '';
   }
+
 }

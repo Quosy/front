@@ -2,7 +2,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
+// App root
+import { AppComponent } from './app.component';
+import { routing } from './app.routing';
 
 // Material
 import { MatButtonModule } from '@angular/material/button';
@@ -11,8 +16,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-import { AppComponent } from './app.component';
-import { routing } from './app.routing';
+// Service
+import { LoginService } from './services/login.service';
+import { TokenService } from './services/token.service';
 
 // Pages
 import { LoginComponent } from './pages/login/login.component';
@@ -28,6 +34,7 @@ import { QuosyComponent } from './pages/quosy/quosy.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
     MatDividerModule,
@@ -36,7 +43,10 @@ import { QuosyComponent } from './pages/quosy/quosy.component';
     ReactiveFormsModule,
     routing
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    TokenService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
