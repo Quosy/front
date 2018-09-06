@@ -7,14 +7,17 @@ describe('Login Component', () => {
   beforeEach(() => {
     page = new LoginTest();
   });
+
   it('should be created', () => {
     expect(page).toBeDefined();
   });
+
   it('should not Login with no input filed', () => {
     page.navigateTo();
     page.getLoginButton().click();
     expect(page.getLoginButton().isPresent()).toBeTruthy();
   });
+
   it('should not Login with only username', () => {
     page.navigateTo();
     page.getUserNameInput().click();
@@ -23,6 +26,7 @@ describe('Login Component', () => {
     expect(page.getRecoverButton().isPresent()).toBeFalsy();
     expect(page.getLoginButton().isPresent()).toBeTruthy();
   });
+
   it('should not Login with only password', () => {
     page.navigateTo();
     page.getPasswordInput();
@@ -31,12 +35,14 @@ describe('Login Component', () => {
     expect(page.getLoginButton().isPresent()).toBeTruthy();
     expect(page.getRecoverButton().isPresent()).toBeFalsy();
   });
+
   it('should show forget form', () => {
     page.navigateTo();
     page.getForgetLink().click();
     expect(page.getLoginButton().isPresent()).toBeFalsy();
     expect(page.getRecoverButton().isPresent()).toBeTruthy();
   });
+
   it('should return to login form', () => {
     page.navigateTo();
     page.getForgetLink().click();
@@ -46,6 +52,7 @@ describe('Login Component', () => {
     expect(page.getLoginButton().isPresent()).toBeTruthy();
     expect(page.getRecoverButton().isPresent()).toBeFalsy();
   });
+
   it('should filed local storage', () => {
     page.navigateTo();
     page.getUserNameInput().click();
@@ -59,6 +66,7 @@ describe('Login Component', () => {
     page.getLoginButton().click();
     page.setLocal();
   });
+
   it('should have inputs already filed with local storage values', () => {
     page.navigateTo();
     expect(page.getPasswordInput().getAttribute('value')).toBe('GI');
@@ -66,6 +74,7 @@ describe('Login Component', () => {
     expect(page.getCheckBoxValue().getAttribute('aria-checked')).toBeTruthy();
     page.getRememberInput().click();
   });
+
   it('should be a bad email adress execption raised', () => {
     page.navigateTo();
     page.getForgetLink().click();
@@ -76,6 +85,7 @@ describe('Login Component', () => {
     expect(page.getLoginButton().isPresent()).toBeFalsy();
     expect(page.getRecoverButton().isPresent()).toBeTruthy();
   });
+
   it('should accept email and retrun to login', () => {
     page.navigateTo();
     page.getForgetLink().click();
@@ -85,4 +95,5 @@ describe('Login Component', () => {
     expect(page.getLoginButton().isPresent()).toBeTruthy();
     expect(page.getRecoverButton().isPresent()).toBeFalsy();
   });
+
 });
