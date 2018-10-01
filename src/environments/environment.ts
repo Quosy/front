@@ -4,11 +4,7 @@
 
 export const environment = {
   production: false,
-<<<<<<< HEAD
   'API': 'http://localhost:4200'
-=======
-  'API': 'http://163.172.172.240:7562/'
->>>>>>> dfd3ee95f07759d4862048a776dc7fe2121d7b03
 };
 
 /*
