@@ -1,8 +1,7 @@
 .login {
     background: linear-gradient(-45deg, #1976D2, #009688);
-    background-size: 60000% 6000%;	
-	animation: Gradient 15s ease infinite;
-  
+    background-size: 60000% 6000%;
+    animation: Gradient 15s ease infinite;
     overflow: hidden;
 }
 
@@ -63,7 +62,7 @@
     .divider {
         border-right: solid 1px #EEEEEE;
         margin-left: auto;
-        margin-right:auto;
+        margin-right: auto;
         margin-top: 50vh;
         transform: translateY(-45%);
     }
@@ -75,13 +74,11 @@
 }
 
 .link {
-    float: right;
     cursor: pointer;
     margin-bottom: 10px;
 }
 
 .returnlink {
-    float: right;
     cursor: pointer;
 }
 
@@ -100,57 +97,43 @@
     height: 60px;
 }
 
-::ng-deep .mat-checkbox-background {
-    background-color: transparent !important;
-}
-
-::ng-deep .mat-checkbox-checkmark {
-    fill: #EEEEEE !important;
-}
-
-::ng-deep .alternative .mat-checkbox-checkmark-path {
-    stroke: #EEEEEE !important;
-}
 
 ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 15px;
 }
 
-
-
 @-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 @-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 @keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
-
