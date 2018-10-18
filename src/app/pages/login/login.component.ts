@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+import { MessageService } from '../../services/message.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,12 +13,12 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public recoverForm: FormGroup;
-  public remember: boolean;
+  // TO IMPLEMENT public remember: boolean;
   public recover: boolean;
   public hover: boolean;
 
-  constructor( private router: Router, private fb: FormBuilder, private loginS: LoginService ) {
-    this.recover = false;
+  constructor(private router: Router, private fb: FormBuilder, private loginS: LoginService, private messageS: MessageService) {
+    // TO IMPLEMENT this.recover = false;
     this.hover = false;
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -33,36 +34,27 @@ export class LoginComponent implements OnInit {
   }
 
   initForm() {
-    const username = localStorage.getItem('username');
-    const password = localStorage.getItem('password');
-    if (username && password) {
-      this.remember = true;
-      this.loginForm.controls.username.patchValue(username);
-      this.loginForm.controls.password.patchValue(password);
-    } else {
-      this.remember = false;
-    }
   }
 
+  // TO IMPLEMENT
   handleRemember() {
-    if (this.remember) {
-      localStorage.clear();
-      localStorage.setItem('username', this.loginForm.controls.username.value);
-      localStorage.setItem('password', this.loginForm.controls.password.value);
-    } else {
-      localStorage.clear();
-    }
+
+  }
+
+  clickOnLink() {
+    this.recover = !this.recover;
+    this.recoverForm.reset();
   }
 
   handleRecover() {
+    this.messageS.showMessage('Un message sera envoyer si l\'adresse est reconnue');
     this.recover = !this.recover;
     this.recoverForm.reset();
   }
 
   login() {
     if (this.loginForm.valid) {
-      this.loginS.login(this.loginForm.value).subscribe( res => {
-        console.log(res);
+      this.loginS.login(this.loginForm.value).subscribe(res => {
         this.handleRemember();
         this.router.navigateByUrl('/quosy');
       });
