@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 730px) {
     .form {
         position: absolute;
         left: 0;
@@ -30,7 +30,7 @@
     }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 730px) {
     .form {
         position: absolute;
         left: 0;

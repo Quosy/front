@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { snackBarComponent } from '../components/snackBarComponent';
+import { SnackBarComponent } from '../components/snack-bar/snack-bar.component';
 
 @Injectable()
-export class LoginService {
+export class MessageService {
 
     constructor(public snackBar: MatSnackBar) { }
 
-    showMessage() {
-        this.snackBar.openFromComponent(snackBarComponent, {
-            duration: 500,
-          });
+    showMessage(customMessage: string) {
+        this.snackBar.openFromComponent(SnackBarComponent, {
+            data: { message: customMessage },
+            duration: 2500,
+            panelClass: ['snackBar'],
+            verticalPosition: 'top'
+        });
     }
 
     showSucessMessage() {

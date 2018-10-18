@@ -15,9 +15,8 @@
           <mat-error *ngIf="loginForm.invalid">{{getErrorMessageLoginPassword()}}</mat-error>
         </mat-form-field>
       </form>
-      <div>
-        
-        <a class="mylabel link" (click)="handleRecover()">forget info ?</a>
+      <div> 
+        <a class="mylabel link" (click)="clickOnLink()">forget info ?</a>
       </div>
       <button class="loginButton button" mat-stroked-button color="primary" (click)="login()">Login</button>
     </div>
@@ -37,7 +36,7 @@
           </mat-form-field>
         </form>
         <div>
-          <a class="mylabel returnlink" (click)="handleRecover()"> Return to login</a>
+          <a class="mylabel returnlink" (click)="clickOnLink()"> Return to login</a>
         </div>
         <button class="recoverButton button" mat-stroked-button color="primary" (click)="sendRecoverMessage()">Send password
           reset</button>
