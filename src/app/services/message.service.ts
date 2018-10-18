@@ -19,7 +19,7 @@ export class MessageService {
     showSucessMessage(succesMessage: string) {
         this.snackBar.openFromComponent(SnackBarComponent, {
             data: { message: succesMessage, icon : 'done' },
-            duration: 2500,
+            duration: 250000,
             panelClass: ['snackBarSuccess'],
             verticalPosition: 'top'
         });
@@ -28,7 +28,7 @@ export class MessageService {
     showErrorMessage(errorMessage: string) {
         this.snackBar.openFromComponent(SnackBarComponent, {
             data: { message: errorMessage, icon : 'clear' },
-            duration: 2500,
+            duration: 250000,
             panelClass: ['snackBarError'],
             verticalPosition: 'top'
         });

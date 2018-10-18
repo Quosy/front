@@ -1,2 +1,4 @@
-<div>{{message}}</div>
-
+<diV class='message-container'>
+  <div>{{message}}</div>
+  <mat-icon (click)='close()' *ngIf='icon' class="icon">{{icon}}</mat-icon>
+</diV>
