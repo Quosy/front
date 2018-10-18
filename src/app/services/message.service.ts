@@ -16,12 +16,22 @@ export class MessageService {
         });
     }
 
-    showSucessMessage() {
-
+    showSucessMessage(succesMessage: string) {
+        this.snackBar.openFromComponent(SnackBarComponent, {
+            data: { message: succesMessage, icon : 'done' },
+            duration: 2500,
+            panelClass: ['snackBarSuccess'],
+            verticalPosition: 'top'
+        });
     }
 
-    showErrorMessage() {
-
+    showErrorMessage(errorMessage: string) {
+        this.snackBar.openFromComponent(SnackBarComponent, {
+            data: { message: errorMessage, icon : 'clear' },
+            duration: 2500,
+            panelClass: ['snackBarError'],
+            verticalPosition: 'top'
+        });
     }
 
 }

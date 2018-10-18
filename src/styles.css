@@ -13,6 +13,20 @@ body {
 
 .snackBar {
     background-color: white !important;
+    color: #1976D2 !important;
+    border-bottom: solid 2px #1976D2 !important;
+    border-left: solid 2px #1976D2 !important;
+}
+
+.snackBarError {
+    background-color: white !important;
+    color: #E91E63 !important;
+    border-bottom: solid 2px #E91E63 !important;
+    border-left: solid 2px #E91E63 !important;
+}
+
+.snackBarSuccess{
+    background-color: white !important;
     color: #009688 !important;
     border-bottom: solid 2px #009688 !important;
     border-left: solid 2px #009688 !important;
