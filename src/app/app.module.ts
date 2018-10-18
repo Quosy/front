@@ -15,6 +15,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // Service
 import { LoginService } from './services/login.service';
@@ -23,16 +24,19 @@ import { TokenService } from './services/token.service';
 // Pages
 import { LoginComponent } from './pages/login/login.component';
 import { QuosyComponent } from './pages/quosy/quosy.component';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    QuosyComponent
+    QuosyComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     FormsModule,
     HttpClientModule,
     MatButtonModule,

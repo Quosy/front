@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   public remember: boolean;
   public recover: boolean;
   public hover: boolean;
-  
 
   constructor( private router: Router, private fb: FormBuilder, private loginS: LoginService ) {
     this.recover = false;
