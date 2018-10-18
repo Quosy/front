@@ -22,11 +22,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginService } from './services/login.service';
 import { TokenService } from './services/token.service';
 import { MessageService } from './services/message.service';
+import { RecoverPasswordService } from './services/recoverPassword.service';
 
 // Pages
 import { LoginComponent } from './pages/login/login.component';
 import { QuosyComponent } from './pages/quosy/quosy.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
   providers: [
     LoginService,
     TokenService,
-    MessageService
+    MessageService,
+    RecoverPasswordService
   ],
   entryComponents : [
     SnackBarComponent
