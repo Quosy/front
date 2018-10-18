@@ -16,7 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 // Service
 import { LoginService } from './services/login.service';
@@ -55,10 +55,9 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
     TokenService,
     MessageService
   ],
-  entryComponents :[
+  entryComponents : [
     SnackBarComponent
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
