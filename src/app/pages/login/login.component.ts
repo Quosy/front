@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { MessageService } from '../../services/message.service';
+import { RecoverPasswordService } from '../../services/recoverPassword.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +18,9 @@ export class LoginComponent implements OnInit {
   public recover: boolean;
   public hover: boolean;
 
-  constructor(private router: Router, private fb: FormBuilder, private loginS: LoginService, private messageS: MessageService) {
+  constructor(private router: Router, private fb: FormBuilder,
+    private loginS: LoginService, private messageS: MessageService,
+    private recoverPasswordS: RecoverPasswordService) {
     // TO IMPLEMENT this.recover = false;
     this.hover = false;
     this.loginForm = this.fb.group({
@@ -30,10 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initForm();
-  }
-
-  initForm() {
   }
 
   // TO IMPLEMENT
@@ -62,9 +61,10 @@ export class LoginComponent implements OnInit {
   }
 
   sendRecoverMessage() {
-    // TODO send service
     if (this.recoverForm.valid) {
-      this.handleRecover();
+      this.recoverPasswordS.recover(this.recoverForm.value).subscribe(() => {
+        this.handleRecover();
+      });
     }
   }
 
